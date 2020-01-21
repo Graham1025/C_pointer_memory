@@ -1,0 +1,34 @@
+
+#include <stdio.h> 
+int main(void)
+{
+	int a = 1;
+	char b = 'a';
+	float c = 1.0;
+	char *l = NULL;
+	void *p;
+		/*char *g;
+	printf("a的地址为：0x%x，其字节数为：%d\n", g, sizeof(g));  这是有问题的因为没有给*g赋初值*/
+	p = &a;
+	printf("a的地址为：0x%x，其字节数为：%d\n", p, sizeof(p));
+	p = &b;
+	printf("b的地址为：0x%x，其字节数为：%d\n", p, sizeof(p));
+	p = &c;
+	printf("c的地址为：0x%x，其字节数为：%d\n", p, sizeof(p));
+	printf("字符类型的指针变量的长度为：%d\n", sizeof(l));
+
+	/*输入要测试的内容*/
+	const char *pointer = "china";
+	printf("常量字符串为：%16s, 其字节数位为：%d\n", pointer, sizeof(pointer));
+	char d[] = "spring";
+	pointer=d;
+	printf("常量字符串为：%16s, 其字节数位为：%d\n", pointer, sizeof(pointer));
+	d[0] = 'z';
+	d[1] = 't';
+	d[2] = 'e';
+	printf("常量字符串为：%16s, 其字节数位为：%d\n", pointer, sizeof(pointer));
+	pointer = pointer + 1;
+	printf("常量字符串为：%16s, 其字节数位为：%d\n", pointer, sizeof(pointer));
+	getchar();
+	return 1;
+	}
